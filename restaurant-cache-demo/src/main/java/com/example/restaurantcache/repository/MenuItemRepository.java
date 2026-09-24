@@ -1,0 +1,14 @@
+package com.example.restaurantcache.repository;
+
+import com.example.restaurantcache.entity.MenuItem;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface MenuItemRepository extends JpaRepository<MenuItem, Long> {
+
+    // Lấy danh sách món ăn theo restaurantId
+    List<MenuItem> findByRestaurantId(Long restaurantId);
+}
